@@ -1,0 +1,147 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #0a0f2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+h1, h2 {
+  margin: 0 0 20px 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.input, .alert-input, .button, .remove-button {
+  font-size: 1rem;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.input::placeholder, .alert-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button:hover {
+  background-color: #1e90ff;
+}
+
+.remove-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alert-input {
+  width: 100px;
+}
+
+.add-stock form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.watchlist table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.watchlist th,
+.watchlist td {
+  padding: 12px;
+  text-align: left;
+}
+
+.chart-placeholder {
+  height: 300px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert {
+  background-color: rgba(255, 0, 0, 0.12) !important;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes flash {
+  0%   { background-color: rgba(255, 0, 0, 0.15); }
+  50%  { background-color: rgba(255, 255, 255, 0.05); }
+  100% { background-color: rgba(255, 0, 0, 0.15); }
+}
+
+.alert.flash {
+  animation: flash 1s infinite;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+

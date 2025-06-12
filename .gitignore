@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+firebase-debug.log
+
+# OS
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Others
+*.swp

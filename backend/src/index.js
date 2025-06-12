@@ -7,7 +7,6 @@ import dotenv from 'dotenv'
 import yahooFinance from 'yahoo-finance2'
 import admin from 'firebase-admin'
 
-// ✅ fix dirname for ES modules
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
@@ -76,7 +75,6 @@ app.post('/api/watchlist', authMiddleware, async (req, res) => {
 });
 
 
-// 💸 POST Prices (Fixed)
 app.post('/api/prices', async (req, res) => {
   const { symbols } = req.body;
 
@@ -108,7 +106,6 @@ app.post('/api/prices', async (req, res) => {
   }
 });
 
-// 📊 GET History
 app.get('/api/history/:symbol', async (req, res) => {
   const { symbol } = req.params;
   try {

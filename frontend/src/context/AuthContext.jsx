@@ -22,12 +22,9 @@ export function AuthProvider({ children }) {
       const isAuthPage =
         location.pathname === '/login' || location.pathname === '/register';
 
-      // If not authenticated AND not on login/register → force login
       if (!u && !isAuthPage) {
         nav('/login');
       }
-
-      // If authenticated and currently on login/register → go to home
       if (u && isAuthPage) {
         nav('/');
       }
@@ -37,12 +34,12 @@ export function AuthProvider({ children }) {
   }, [nav, location]);
 
   const register = (email, pwd) =>
-    createUserWithEmailAndPassword(auth, email, pwd); // no nav, auth state handles it
+    createUserWithEmailAndPassword(auth, email, pwd);
 
   const login = (email, pwd) =>
-    signInWithEmailAndPassword(auth, email, pwd); // no nav, auth state handles it
+    signInWithEmailAndPassword(auth, email, pwd);
 
-  const logout = () => signOut(auth); // nav handled in auth listener
+  const logout = () => signOut(auth);
 
   return (
     <AuthContext.Provider value={{ user, login, register, logout }}>
